@@ -1,45 +1,20 @@
 "use strict";
 
-let weekDays = new Array();
-weekDays[0] = "dimanche";
-weekDays[1] = "lundi";
-weekDays[2] = "mardi";
-weekDays[3] = "mercredi";
-weekDays[4] = "jeudi";
-weekDays[5] = "vendredi";
-weekDays[6] = "samedi";
+let nb;
+let randNb = parseInt(Math.floor(Math.random() * 100));
+console.log(randNb);
+ do {
+  nb = parseInt(prompt("Choisir un nombre"));
 
-weekDays = [
-  "dimanche",
-  "lundi",
-  "mardi",
-  "mercredi",
-  "jeudi",
-  "vendredi",
-  "samedi",
-];
+  if (nb < randNb) {
+      console.log('Plus');
+  } else if (nb > randNb) {
+      console.log('Moin');
+  } else   {
+      console.log("Gagné");
+ }
 
-let month = [
-    "janvier",
-    "février",
-    "mars",
-    "avril",
-    "mai",
-    "juin",
-    "juillet",
-    "aout",
-    "septembre",
-    "octobre",
-    "novembre",
-    "decembre", 
-]
-//n'afficher que mercredi
-let today = new Date();
-let datechiffre =today.getDate();
-let dayIndex = today.getDay();
-let monthIndex = today.getMonth();
-let year = today.getFullYear();
+  
+ } while (isNaN(nb));
 
-const DIV = document.querySelector("#content");
-DIV.innerHTML= `<p>${weekDays[dayIndex]} ${datechiffre} ${month[monthIndex]} ${year}</p>`;
-
+console.log(nb);
