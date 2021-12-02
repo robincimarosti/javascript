@@ -75,7 +75,7 @@ function displayDetails() {
     `
     );
     //remplir le aside>p avec le téléphone
-    $("#contact-details p").texte(contact.phone);
+    $("#contact-details p").text(contact.phone);
     //stocke l'index dans la balise "editer le contact"
     $("#contact-details a").data("index", index);
     //afficher le aside
@@ -93,7 +93,7 @@ function removeContact() {
     displayContacts();
 }
 //title Civilité choisie (1,2,3)Abréviation de la civilité textuellement
-function dislpayTitle(title){
+function displayTitle(title){
     let textTitle ="";
     switch (title) {
     case "1":
@@ -115,10 +115,10 @@ function editContact() {
     let index = $("#contact-details a").data("index");
     let contact= list[index];
 
-    $("#title").val(concat.title);
-    $("#lastName").val(concat.lastName);
-    $("#firstName").val(concat.firstName);
-    $("#phone").val(concat.phone);
+    $("#title").val(contact.title);
+    $("#lastName").val(contact.lastName);
+    $("#firstName").val(contact.firstName);
+    $("#phone").val(contact.phone);
 
     //changer le data-mode en mode edit
     FORM.removeClass("hide").data("mode", "edit");
